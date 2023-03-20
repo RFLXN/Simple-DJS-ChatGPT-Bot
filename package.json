@@ -1,0 +1,30 @@
+{
+  "name": "chatpgt-djs-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix",
+    "build": "tsc",
+    "prebuild": "yarpm run lint",
+    "start": "node --experimental-specifier-resolution=node ./dist/main.js",
+    "prestart": "yarpm run build"
+  },
+  "dependencies": {
+    "discord-api-types": "^0.37.35",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "typescript": "^4.9.5",
+    "yarpm": "^1.2.0"
+  }
+}
