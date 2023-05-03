@@ -1,5 +1,6 @@
 import { config } from "dotenv";
 import {
+    AttachmentBuilder,
     EmbedBuilder, Interaction, REST, TextChannel
 } from "discord.js";
 import { fetchReplies, initBot, replaceMentionToName } from "./bot";
@@ -76,10 +77,20 @@ bot.on("messageCreate", async (message) => {
         console.log(result.result);
         console.log(createResultPricingMessage(result, priceManager.price));
 
-        await message.reply({
-            content: `${result.result}`,
-            embeds: [new EmbedBuilder().setDescription(createResultPricingMessage(result, priceManager.roundedPrice))]
-        });
+
+        const embed = new EmbedBuilder().setDescription(createResultPricingMessage(result, priceManager.roundedPrice));
+
+        if (result.result.length > 1800) {
+            await message.reply({
+                embeds: [embed],
+                files: [new AttachmentBuilder(Buffer.from(result.result, "utf8")).setName("answer.txt")]
+            });
+        } else {
+            await message.reply({
+                content: `${result.result}`,
+                embeds: [embed]
+            });
+        }
     } catch (e) {
         console.error(e);
         await message.reply(`ERROR OCCURRED!\n${e}`);
