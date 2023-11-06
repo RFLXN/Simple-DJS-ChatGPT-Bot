@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { GptModel } from "./type/gpt";
+import { GptModel } from "./type/gpt.js";
 
 const calcPrice = (model: GptModel, prompt: number, completion: number) => {
     switch (model) {

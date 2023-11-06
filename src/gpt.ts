@@ -1,6 +1,6 @@
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
-import { ChatCreateResult, GptModel } from "./type/gpt";
-import { calcPrice } from "./price";
+import { ChatCreateResult, GptModel } from "./type/gpt.js";
+import { calcPrice } from "./price.js";
 
 const createGptConfig = (apiKey: string) => new Configuration({ apiKey });
 

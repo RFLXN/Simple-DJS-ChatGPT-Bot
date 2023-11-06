@@ -1,9 +1,9 @@
 import {
     ChatInputCommandInteraction, REST, Routes, SlashCommandBuilder, SlashCommandStringOption
 } from "discord.js";
-import { GptTokenPriceManager } from "./price";
-import { GptModels } from "./type/gpt";
-import { getModel, setModel as setGptModel } from "./gpt";
+import { GptTokenPriceManager } from "./price.js";
+import { GptModels } from "./type/gpt.js";
+import { getModel, setModel as setGptModel } from "./gpt.js";
 
 const resetUsed = new SlashCommandBuilder()
     .setName("reset-used")

@@ -3,7 +3,7 @@ import {
     AttachmentBuilder,
     EmbedBuilder, Interaction, REST, TextChannel
 } from "discord.js";
-import { fetchReplies, initBot, replaceMentionToName } from "./bot";
+import { fetchReplies, initBot, replaceMentionToName } from "./bot.js";
 import {
     convertToMessageObject,
     createChatCompletion,
@@ -12,10 +12,10 @@ import {
     createResultPricingMessage,
     getModel,
     setModel
-} from "./gpt";
-import { GptTokenPriceManager } from "./price";
-import { GptModel } from "./type/gpt";
-import { handlers, index, registerCommands } from "./bot-commands";
+} from "./gpt.js";
+import { GptTokenPriceManager } from "./price.js";
+import { GptModel } from "./type/gpt.js";
+import { handlers, index, registerCommands } from "./bot-commands.js";
 
 config();
 
